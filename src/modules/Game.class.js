@@ -120,21 +120,21 @@ class Game {
   // ----------------------------------------------------
 
   addRandomTitle() {
-    const cleanСells = [];
+    const cleanCells = [];
 
     this.board.forEach((array, i) => {
       array.forEach((cells, j) => {
         if (cells === 0) {
-          cleanСells.push({ row: i, cell: j });
+          cleanCells.push({ row: i, cell: j });
         }
       });
     });
 
-    if (cleanСells.length === 0) {
+    if (cleanCells.length === 0) {
       return;
     }
 
-    const randomCel = cleanСells[Math.floor(Math.random() * cleanСells.length)];
+    const randomCel = cleanCells[Math.floor(Math.random() * cleanCells.length)];
     const num = Math.random() < 0.1 ? 4 : 2;
 
     this.board[randomCel.row][randomCel.cell] = num;
